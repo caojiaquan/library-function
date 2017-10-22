@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+
+<script type="text/javascript">
+	var result = {};
+	var str = 'npm=2 install node --save';
+	var arr = str.split(' ');
+	debugger;
+
+	arr.forEach(function(item){
+		let arr = item.split('=');
+		debugger;
+		let key = arr[0].slice(2);
+		debugger;
+		result[key] = arr[1];
+		debugger;
+	});
+
+	console.log(result);
+
+
+	/*
+
+		de: undefinedm: undefined  save: undefined stall: undefined__proto__: Object
+	*/
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		
+	</title>
+</head>
+<body>
+
+
+<script type="text/javascript">
+	
+var arr = [1, 2, 4, 5];
+	Array.prototype.sayHello = function (fn, context) {
+    var arr = [];
+    if (typeof fn === "function") {
+
+
+      for (var k = 0, length = this.length; k < length; k++) { 
+      debugger;     
+         arr.push(fn.call(context, this[k], k, this));
+         debugger;
+      }
+    }
+    return arr;
+  };
+
+
+  var arr1 = arr.sayHello(function(item){
+  	return item * 2;
+  });
+
+  console.log(arr1);
+</script>
+</body>
+</html>
