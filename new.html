@@ -22,11 +22,13 @@
 		//创建一个对象
 		var obj = {};
 		//对象的原型指向构造函数的原型
-		if(obj.__proto__){
+		if(obj.__proto__ && fn.prototype !== null){
 			obj.__proto__ = fn.prototype; 
 		}
-		fn.apply(obj);
-
+		fn.apply(obj, Array.prototype.slice.call(arguments, 1));
+		if((typeof obj === 'function' || typeof obj === 'obj') && obj !== null){
+			return obj;
+		}
 		return obj;
 	}
 

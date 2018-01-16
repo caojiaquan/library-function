@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script type="text/javascript">
+	var arr = [0, 2, 3, 4, 5];
+	var bb = arr.filter(function(item, index, array){
+		return item !== 0;
+	});
+	// 过滤器函数
+	Array.prototype.lib = function(fn){
+		var arr = [];
+		for(var i=0; i<this.length; i++){
+			var flag = fn.call(null, this[i], i, this);
+			if(flag){
+				arr.push(this[i]);
+			}
+		}
+		return arr;
+	}
+	// indexof 函数
+	Array.prototype.index = function(elem){
+		var range = this.length;
+		while(range > 0){
+			range--;
+			if(this[range] == elem){
+				return range;
+			}
+		}
+		return -1;
+	}
+	
+
+
+</script>
+</body>
+</html>
