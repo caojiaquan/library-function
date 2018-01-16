@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+
+
+<script type="text/javascript">
+	function Animal(){
+		this.type = 'animal';
+		this.run = function(){
+			console.log('i am running');
+		}
+	}
+	Animal.prototype.say = function(){
+		console.log('haha');
+	}
+
+	function New(fn, a, b){
+		//创建一个对象
+		var obj = {};
+		//对象的原型指向构造函数的原型
+		if(obj.__proto__){
+			obj.__proto__ = fn.prototype; 
+		}
+		fn.apply(obj);
+
+		return obj;
+	}
+
+
+	var animal = New(Animal,1,2);
+	animal.run();
+	animal.say();
+</script>
+</body>
+</html>
