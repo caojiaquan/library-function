@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+
+<script type="text/javascript">
+	function Prom(fn){
+		var data;
+		var list = [];
+		this.then = function(){
+			console.log(Array.prototype.slice.call(arguments));
+			list = list.concat(Array.prototype.slice.call(arguments));
+			console.log(list);
+			return this;
+		}
+		var resolve = function(data){
+			list.forEach(function(item, index, array){
+				item(data);
+			});
+		}
+		fn(resolve);
+	}
+	new Prom(function(resolve, reject){
+		console.log(1);
+		setTimeout(function(){
+			resolve();
+		}, 1000);
+	}).then(function(){
+		console.log(2);
+	}).then(function(){
+		console.log(3);
+	});
+
+</script>
+</body>
+</html>

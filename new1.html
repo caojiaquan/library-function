@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+
+
+<script type="text/javascript">
+
+	function New(fn){
+		var obj = {};
+		obj.__proto__ = fn.prototype;
+		fn.call(obj, Array.prototype.slice.call(arguments, 1);
+		return obj;
+	}
+
+	function Person(name){
+		this.name = 'lisi';
+		this.aname = name;
+	}
+</script>
+</body>
+</html>

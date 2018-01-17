@@ -32,6 +32,18 @@
 		}
 		return -1;
 	}
+
+	[1, 3, 4].map(function(item, index, array){
+		return item*2;
+	});
+	//map函数封装
+	Array.prototype.mapp = function(fn){
+		var arr = [];
+		for(var i=0; i<this.length; i++){
+			arr.push(fn.call(null, this[i], i, this));
+		}
+		return arr;
+	}
 	
 
 

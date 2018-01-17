@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+	#div1{
+		background: rgba(0, 0, 0, 0);
+		transition: all 1s ease-in;
+	}
+	#div1.aa{
+		background: rgba(0, 0, 0, .7);
+		position: fixed;
+		top:0;
+		bottom:0;
+		left: 0;
+		right: 0;
+	}
+	button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+button:hover{
+	background: #ccc;
+	transition-duration: 2s;
+	cursor: not-allowed;
+}
+</style>
+<body>
+<button>anniu</button>
+<div id="div1"></div> 
+
+<script type="">
+	var oBtn = document.getElementsByTagName('button')[0];
+	var oDiv1 = document.getElementById('div1');
+	alert(1);
+	oBtn.onclick = function(){
+		oDiv1.className = 'aa';
+	}
+	oDiv1.onclick = function(){
+		oDiv1.className = '';
+	}
+</script>
+</body>
+</html>
