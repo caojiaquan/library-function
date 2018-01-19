@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+	li{
+		list-style: none;
+	}
+	body{
+		perspective: 1000px;
+		perspective-origin: 50% -100%;
+	}
+	.container{
+		position: relative;
+		width: 200px;
+		height: 150px;
+		margin: 0 auto;
+		transform-style: preserve-3d;
+		animation: rotate 3s ease-in infinite;
+	}
+	.container li{
+		width: 200px;
+		height: 150px;
+		background: #f00;
+		font-size: 20px;
+		text-align: center;
+		line-height: 150px;
+		position: absolute;
+	}
+	@keyframes rotate{
+		from{
+			
+		}
+		to{
+			transform:translateY(60deg);
+			width: 500px;
+		}
+	}
+	.container li:nth-child(1){
+		transform: translateZ(200px);
+	}
+	.container li:nth-child(2){
+		transform: rotateY(60deg) translateZ(200px);
+	}
+	.container li:nth-child(3){
+		transform:rotateY(120deg) translateZ(200px);
+	}
+	.container li:nth-child(4){
+		transform: rotateY(180deg) translateZ(200px);
+	}
+	.container li:nth-child(5){
+		transform:rotateY(240deg) translateZ(200px);
+	}
+	.container li:nth-child(6){
+		transform:rotateY(300deg) translateZ(200px);
+	}
+
+</style>
+<body>
+
+
+<div class="container">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+
+<script type="text/javascript">
+	
+
+	
+	var Thunk = function(fn){
+	  return function (){
+	    var args = Array.prototype.slice.call(arguments);
+	    return function (callback){
+	      args.push(callback);
+	      return fn.apply(this, args);
+	    }
+	  };
+	};
+
+	async function aa(){
+
+		var f = await setTimeout(function(){
+				console.log(1);
+			}, 2000);
+		var b = await setTimeout(function(){
+				console.log(7);
+			}, 1000);
+		console.log(2);
+		return b;
+	}
+	aa().then(function(){
+		console.log(3);
+	});
+
+
+</script>
+</body>
+</html>
